@@ -6,10 +6,8 @@
 
 import { tileLayerPolitical } from "./tile-layer.js";
 import { toKMorMeter } from "../utils/to-km-or-meter.js";
-import { notifySreenReader } from "../utils/accessibility.js";
+import { notifySreenReader, showAndroidToast } from "../utils/accessibility.js";
 import { addIndiaBoundaries } from "../services/fetch-india.js";
-
-
 
 export var map = L.map("map", {
   keyboardPanDelta: 0,
