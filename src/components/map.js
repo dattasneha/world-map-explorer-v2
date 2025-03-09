@@ -39,6 +39,7 @@ map.on("locationerror", function (e) {
     e.code == 1 ? "Please grant loacation permission" : e.message,
     true
   ); // Handle the error appropriately (e.g., show an alert or a fallback message)
+  showAndroidToast(e.code == 1 ? "Please grant loacation permission" : e.message);
   alert(
     e.code == 1 ? "Please grant loacation permission" : e.message
   ); // Handle the error appropriately (e.g., show an alert or a fallback message)

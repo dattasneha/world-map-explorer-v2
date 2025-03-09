@@ -24,6 +24,11 @@ export function notifySreenReader(text, view, priority) {
   }, 10000);
 }
 
+export function showAndroidToast(toast) {
+  console.log("Checking Android object:", toast);
+  Android.showToast(toast);
+}
+
 export function notifyLoading() {
   notifySreenReader("Loading.");
   // Add your logic here
