@@ -7,5 +7,10 @@ import { map } from "../components/map.js";
 
 
 export function fetchCurrentLocation() {
-    map.locate({ setView: true, maxZoom: 16 , enableHighAccuracy: true});
+      Android.getDeviceLocation();
+      map.locate({ setView: true, maxZoom: 16, enableHighAccuracy: true });
+    
+}
+function getLocationData(location) {
+    map.locate({ setView: location, maxZoom: 16, enableHighAccuracy: true });
 }

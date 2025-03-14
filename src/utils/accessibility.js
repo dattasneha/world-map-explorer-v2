@@ -26,7 +26,7 @@ export function notifySreenReader(text, view, priority) {
 
 export function showAndroidToast(toast) {
   console.log("Checking Android object:", toast);
-  Default.showToast(toast);
+  Android.showToast(toast);
 }
 
 export function notifyLoading() {
