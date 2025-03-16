@@ -19,6 +19,6 @@ window.updateDeviceLocation = function (lat, lon) {
   map.setView([lat, lon], 16);
   if (window.marker) {
     window.map.removeLayer(window.marker);
-    window.marker = new Marker(map.getCenter()).addTo(map);
-   }
+  }
+  window.marker = new Marker(map.getCenter()).addTo(map);
 }
