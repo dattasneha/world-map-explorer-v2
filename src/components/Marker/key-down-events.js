@@ -71,6 +71,7 @@ export function markerMove(event) { //for key shortcuts related to marker only i
   if (event.key.startsWith('Arrow') && !event.shiftKey) {
     this.setLatLng(getNextLatLng.bind(this)(event.code));
   }
+  console.log(`hello:${this.getLatLng()}`);
 }
 export function InboundMarkerMove(event) { //for key shortcuts related to marker only in inbound
   if (event.key.startsWith('Arrow') && !event.shiftKey) {
@@ -106,6 +107,7 @@ function InboundMarkerMovement(key) { //detect the border, and blocks movement i
       this.getLatLng().lng - move[1],
     ]);
   } else {
+    // console.log(`hi from inboundMarker.move`)
     this.setLatLng(getNextLatLng.bind(this)(key));
   }
 }
@@ -130,10 +132,13 @@ function getBorderDistance(event) { //for getting distance from border
 function getNextLatLng(direction) {
   clickSound.play();
   const center = this.getLatLng();
+  console.log(`centre:${center}`);
   const point = map.latLngToLayerPoint(center);
-  let { x: lat, y: lng } = point; // Destructure point coordinates
+  
+  let { x: lat, y: lng } = point;
+ // Destructure point coordinates
   const movement = 10; // Define movement step size
-
+  
   // Define movement actions for each direction
   const directionActions = {
     ArrowUp: () => (lng -= movement),
@@ -145,8 +150,10 @@ function getNextLatLng(direction) {
   if (directionActions[direction]) {
     directionActions[direction]();
   }
+  
 
   const newLatLng = map.layerPointToLatLng({ x: lat, y: lng });
+  console.log(`newLatLng: ${newLatLng}`);
   return newLatLng;
 }
 

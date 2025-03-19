@@ -105,7 +105,7 @@ export const initialize_DistanceFinder_EventListeners = () => {
       event.preventDefault();
       document.getElementById("fromMap")?.click(); // Simulates clicking the "fromMap" button
     }
-  });
+  }); 
 
   // Triggers distance calculation when the "find" button is clicked
   findDistanceButton.addEventListener("click", calculateDistance.bind(findDistanceButton));
